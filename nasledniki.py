@@ -1,12 +1,13 @@
+import re
 all_class_family = {}
 parent = []
 
 def input_family():
     buff=input()
     if len(buff)>1:
-        child, parent = input().split(':', ' ')
+        child, parent = re.split(' : | ', buff)
         #parent = parent.split()
-        add_family(child,parent)
+        add_family(parent, child)
     else:
         add_family(buff, None)
 
